@@ -16,21 +16,24 @@ class Dashboard extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Image.asset('images/bytebank_logo.png'),
           ),
-          Row(
-            children: <Widget>[
-              _FeatureItem(
-                'Transfer',
-                Icons.monetization_on,
-                onClick: () {
-                  _showContactList(context);
-                },
-              ),
-              _FeatureItem(
-                'Transaction Feed',
-                Icons.description,
-                onClick: null,
-              ),
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: <Widget>[
+                _FeatureItem(
+                  'Transfer',
+                  Icons.monetization_on,
+                  onClick: () {
+                    _showContactList(context);
+                  },
+                ),
+                _FeatureItem(
+                  'Transaction Feed',
+                  Icons.description,
+                  onClick: null,
+                ),
+              ],
+            ),
           ),
         ],
       ),
