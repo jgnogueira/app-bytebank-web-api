@@ -1,4 +1,5 @@
 import 'package:bytebank_armazenamento_interno/models/contact.dart';
+import 'package:bytebank_armazenamento_interno/models/transaction.dart';
 import 'package:flutter/material.dart';
 
 class TransactionsList extends StatelessWidget {
@@ -36,20 +37,5 @@ class TransactionsList extends StatelessWidget {
         itemCount: transactions.length,
       ),
     );
-  }
-}
-
-class Transaction {
-  final double value;
-  final Contact contact;
-
-  Transaction(
-    this.value,
-    this.contact,
-  );
-
-  @override
-  String toString() {
-    return 'Transaction{value: $value, contact: $contact}';
   }
 }
