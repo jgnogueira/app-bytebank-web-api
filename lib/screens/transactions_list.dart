@@ -1,3 +1,4 @@
+import 'package:bytebank_armazenamento_interno/components/progress.dart';
 import 'package:bytebank_armazenamento_interno/http/webclient.dart';
 import 'package:bytebank_armazenamento_interno/models/transaction.dart';
 import 'package:flutter/material.dart';
@@ -16,19 +17,7 @@ class TransactionsList extends StatelessWidget {
             case ConnectionState.none:
               break;
             case ConnectionState.waiting:
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    CircularProgressIndicator(),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: Text('Loading...'),
-                    ),
-                  ],
-                ),
-              );
+              return Progress();
               break;
             case ConnectionState.active:
               break;
