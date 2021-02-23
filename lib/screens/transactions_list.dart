@@ -1,4 +1,3 @@
-import 'package:bytebank_armazenamento_interno/models/contact.dart';
 import 'package:bytebank_armazenamento_interno/models/transaction.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +6,6 @@ class TransactionsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    transactions.add(Transaction(100.0, Contact(0, 'Embiid', 2000)));
     return Scaffold(
       appBar: AppBar(
         title: Text('Transactions'),
