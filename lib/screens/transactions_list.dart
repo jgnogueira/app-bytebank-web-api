@@ -61,7 +61,7 @@ class TransactionsList extends StatelessWidget {
               break;
           }
 
-          return Text('Unknown Error');
+          return Text('Unknown error!');
         },
       ),
     );
