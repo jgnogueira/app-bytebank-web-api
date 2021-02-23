@@ -1,11 +1,7 @@
-import 'package:bytebank_armazenamento_interno/http/webclient.dart';
 import 'package:bytebank_armazenamento_interno/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Bytebank());
-  findAll();
-}
+void main() => runApp(Bytebank());
 
 class Bytebank extends StatelessWidget {
   @override
