@@ -42,7 +42,7 @@ class _ContactsListState extends State<ContactsList> {
               break;
           }
 
-          return Text('Unknown error!');
+          return CenteredMessage('Unknown error!');
         },
       ),
       floatingActionButton: FloatingActionButton(
