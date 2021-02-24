@@ -1,3 +1,4 @@
+import 'package:bytebank_armazenamento_interno/http/webclient.dart';
 import 'package:bytebank_armazenamento_interno/models/contact.dart';
 import 'package:bytebank_armazenamento_interno/models/transaction.dart';
 import 'package:flutter/material.dart';
@@ -62,6 +63,13 @@ class _TransactionFormState extends State<TransactionForm> {
                           double.tryParse(_valueController.text);
                       final transactionCreated =
                           Transaction(value, widget.contact);
+                      save(transactionCreated).then(
+                        (value) {
+                          if (value != null) {
+                            Navigator.pop(context);
+                          }
+                        },
+                      );
                     },
                   ),
                 ),
