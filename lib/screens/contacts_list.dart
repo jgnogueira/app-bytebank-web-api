@@ -32,16 +32,19 @@ class _ContactsListState extends State<ContactsList> {
             case ConnectionState.active:
               break;
             case ConnectionState.done:
-              final List<Contact> contacts = snapshot.data;
-              if (contacts.isNotEmpty) {
-                return ListView.builder(
-                  itemBuilder: (context, index) {
-                    final Contact contact = contacts[index];
-                    return _ContactItem(contact);
-                  },
-                  itemCount: contacts.length,
-                );
+              if (snapshot.hasData) {
+                final List<Contact> contacts = snapshot.data;
+                if (contacts.isNotEmpty) {
+                  return ListView.builder(
+                    itemBuilder: (context, index) {
+                      final Contact contact = contacts[index];
+                      return _ContactItem(contact);
+                    },
+                    itemCount: contacts.length,
+                  );
+                }
               }
+
               return CenteredMessage('No contacts found!', icon: Icons.warning);
               break;
           }
