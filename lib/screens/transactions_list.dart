@@ -50,7 +50,8 @@ class TransactionsList extends StatelessWidget {
                   itemCount: transactions.length,
                 );
               }
-
+              return CenteredMessage('No transactions found!',
+                  icon: Icons.warning);
               break;
           }
 

@@ -1,3 +1,4 @@
+import 'package:bytebank_armazenamento_interno/components/centered_message.dart';
 import 'package:bytebank_armazenamento_interno/components/progress.dart';
 import 'package:bytebank_armazenamento_interno/database/dao/contact_dao.dart';
 import 'package:bytebank_armazenamento_interno/models/contact.dart';
@@ -32,13 +33,16 @@ class _ContactsListState extends State<ContactsList> {
               break;
             case ConnectionState.done:
               final List<Contact> contacts = snapshot.data;
-              return ListView.builder(
-                itemBuilder: (context, index) {
-                  final Contact contact = contacts[index];
-                  return _ContactItem(contact);
-                },
-                itemCount: contacts.length,
-              );
+              if (contacts.isNotEmpty) {
+                return ListView.builder(
+                  itemBuilder: (context, index) {
+                    final Contact contact = contacts[index];
+                    return _ContactItem(contact);
+                  },
+                  itemCount: contacts.length,
+                );
+              }
+              return CenteredMessage('No contacts found!', icon: Icons.warning);
               break;
           }
 
